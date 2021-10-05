@@ -1,0 +1,25 @@
+USB_VID = 0x239A
+USB_PID = 0x80EB
+USB_PRODUCT = "Follow 2021"
+USB_MANUFACTURER = "Equipe PUCPR"
+
+MCU_CHIP = nrf52840
+
+INTERNAL_FLASH_FILESYSTEM = 1
+
+# Turn off displayio to make room for frozen libs.
+CIRCUITPY_DISPLAYIO = 0
+
+CIRCUITPY_RGBMATRIX = 0
+CIRCUITPY_SHARPDISPLAY = 0
+CIRCUITPY_FRAMEBUFFERIO = 0
+
+# Now we actually have a lot of room. Put back some useful modules.
+CIRCUITPY_BITBANGIO = 1
+CIRCUITPY_COUNTIO = 1
+CIRCUITPY_BUSDEVICE = 1
+
+FROZEN_MPY_DIRS += $(TOP)/frozen/Adafruit_CircuitPython_Register
+FROZEN_MPY_DIRS += $(TOP)/frozen/Adafruit_CircuitPython_MPU6050
+
+CIRCUITPY_REQUIRE_I2C_PULLUPS = 0
